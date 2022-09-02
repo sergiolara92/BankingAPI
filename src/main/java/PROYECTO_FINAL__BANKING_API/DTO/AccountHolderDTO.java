@@ -9,7 +9,6 @@ public class AccountHolderDTO {
     private String username;
     private String password;
     private String name;
-    @JsonFormat(pattern = "dd-MM-yyyy")
     private LocalDate dateOfBirth;
     private String streetName;
     private Integer buildingNumber;

@@ -52,7 +52,7 @@ public class AccountController {
     }
 
     @DeleteMapping("/delete-account/{id}")  // solo admin -- OK
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     public String deleteAccount(@PathVariable Long id){
         return accountService.deleteAccount(id);
     }
@@ -98,6 +98,9 @@ public class AccountController {
                                    @RequestParam String secretKeySendingAccount){
         return accountService.transferThirdParty(hashedKey, sendingAccountId, amount, receiveAccountId, secretKeySendingAccount);
     }
+
+
+
 
 
 

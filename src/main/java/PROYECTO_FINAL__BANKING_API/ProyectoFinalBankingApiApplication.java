@@ -169,6 +169,12 @@ public class ProyectoFinalBankingApiApplication implements CommandLineRunner {
 		roleRepository.save(holderRole4);
 		accountHolderRepository.save(user4);
 
+		ThirdParty thirdParty1 = new ThirdParty("thirdpartymember", passwordEncoder().encode("password"),"name", "hashed" );
+		thirdPartyRepository.save(thirdParty1);
+
+		Role thirdPartyRole = new Role ("THIRD PARTY", thirdParty1);
+		roleRepository.save(thirdPartyRole);
+		thirdPartyRepository.save(thirdParty1);
 
 
 

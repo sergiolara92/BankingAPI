@@ -82,8 +82,7 @@ public class AccountService {
             accountRepository.deleteById(id);
             return "Account " + id + " has been deleted.";
         } else {
-            throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "The selected ID doesn't match any account.");
-        }
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "The account does not exist");        }
     }
 
     public Account changeBalanceAdmin(Long accountId, BigDecimal newBalance) {
