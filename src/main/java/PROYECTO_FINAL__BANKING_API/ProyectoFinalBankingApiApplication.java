@@ -70,6 +70,9 @@ public class ProyectoFinalBankingApiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
+		//I INSTANTIATED MANY ADDRESSES, ACCOUNTS, AND USERS TO MAKE THE TEST EASIER
+
 		Address address1 = new Address("Calle 1", 1, 1111, "Barcelona", "Espanya");
 		Address address2 = new Address("Calle 2", 2, 2222, "Madrid", "Espanya");
 		Address address3 = new Address("Calle 3", 3, 3333, "Valencia", "Espanya");
