@@ -100,7 +100,7 @@ public class controllerTest {
     void get_admin_check_balance_test() throws Exception {
         MvcResult mvcResult = mockMvc.perform(get("/admin-check-balance?id=2"))
                 .andExpect(status().isOk()).andReturn();
-
+        System.out.println(mvcResult.getResponse().getContentAsString());
         assertTrue(mvcResult.getResponse().getContentAsString().contains("500"));
     }
 
@@ -157,13 +157,12 @@ public class controllerTest {
 
 
 
-    //TODO! PENDIENTE ACABAR ESTE!!
     @Test
     void put_third_party_transfer_test() throws Exception {
-        MvcResult mvcResult = mockMvc.perform(put("/third-party-transfer?sendingAccountId=2&amount=50&receiveAccountId=3&secretKeySendingAccount=pepepe888"))
-                .andExpect(header().string("Header", "hashed")).andReturn();
+        MvcResult mvcResult = mockMvc.perform(put("/third-party-transfer?sendingAccountId=2&amount=50&receiveAccountId=3&secretKeySendingAccount=pepepe888")
+                        .header("hashedKey", "hashed"))
+                .andExpect(status().isOk()).andReturn();
         System.out.println("RESULT  " + mvcResult.getResponse().getContentAsString());
-
         assertTrue(mvcResult.getResponse().getContentAsString().contains("transferred") );
     }
 
