@@ -72,14 +72,7 @@ public class Checking extends Account{
 
 
 
-    public void applyMaintenanceFee(){
-        if (LocalDate.now().getMonthValue() > this.getMaintenanceDate().getMonthValue() && LocalDate.now().getYear() >= this.getMaintenanceDate().getYear()) {
-            for (int i = LocalDate.now().getMonthValue(); i > this.getMaintenanceDate().getMonthValue() ; i--) {
-                this.setBalance(this.getBalance().subtract(monthlyMaintenanceFee));
-            }
-            this.setMaintenanceDate(LocalDate.now());
-        }
-    }
+
 
     @Override
     public void setBalance(BigDecimal balance) {
